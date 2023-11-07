@@ -1,0 +1,20 @@
+<ngx-vajasoft-barcode 
+   (result)="onResult($event)" 
+   [autofocus]="true"
+   [zoom]="zoom"
+   [focusDistance]="focusDistance"
+   (hasZoomChanged)="onHasZoomChanged($event)"
+   (hasFocusDistanceChanged)="onHasFocusDistanceChanged($event)">
+</ngx-vajasoft-barcode> 
+
+<p>Zoom</p>
+<input type="range" [ngModel]="zoom" min="1" max="5" (ngModelChange)="onZoomSliderChanged($event)" />
+<pre>Has Zoom: {{ hasZoom | json }}</pre>
+<pre>Zoom: {{ zoom | json }}</pre>
+
+<br />
+
+<p>Focus distance</p>
+<input type="range" [ngModel]="focusDistance" min="1" max="5" (ngModelChange)="onFocusDistanceSliderChanged($event)" />
+<pre>Has Focus Distance: {{ hasFocusDistance | json }}</pre>
+<pre>Focus Distance: {{ focusDistance | json }}</pre>

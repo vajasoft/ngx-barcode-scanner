@@ -1,0 +1,10 @@
+<div class="scanner-container">
+   <div [hidden]="isLoading"> <!--*ngIf="!isLoading"--> <!--[style.visibility]="isLoading ? 'hidden' : 'visible'"-->
+     <video #scanner poster="data:image/gif,AAAA"></video>
+     <div class="overlay-element"></div>
+     <div class="laser">
+       <div class="laser-inner"></div>
+     </div>
+   </div>
+   <!-- <pre>{{ cameraDetails | json }}</pre> -->
+</div>
