@@ -5,16 +5,46 @@
    [focusDistance]="focusDistance"
    (hasZoomChanged)="onHasZoomChanged($event)"
    (hasFocusDistanceChanged)="onHasFocusDistanceChanged($event)">
-</ngx-vajasoft-barcode> 
+</ngx-vajasoft-barcode>
 
-<p>Zoom</p>
-<input type="range" [ngModel]="zoom" min="1" max="5" (ngModelChange)="onZoomSliderChanged($event)" />
-<pre>Has Zoom: {{ hasZoom | json }}</pre>
-<pre>Zoom: {{ zoom | json }}</pre>
+<div *ngIf="scanResult">
+   <p>Result</p>
+   <pre>{{ scanResult | json }}</pre>
+</div>
+
+<div>
+   <p>Zoom</p>
+   <pre><b>Has Zoom: </b>{{ hasZoom | json }}</pre>
+   <div *ngIf="hasZoom">
+      <input #zoomSlider aria-label="Zoom" type="range" 
+         [ngModel]="zoom" 
+         [min]="hasZoom.min || 1" 
+         [max]="hasZoom.max || 2" 
+         [step]="hasZoom.step || 0.1" 
+         (ngModelChange)="onZoomSliderChanged($event)" />
+      <pre><b>Value: </b>{{ zoom | json }}</pre>
+      <pre><b>Min:  </b>{{ zoomSlider.min }}</pre>
+      <pre><b>Max:  </b>{{ zoomSlider.max }}</pre>
+      <pre><b>Step: </b>{{ zoomSlider.step }}</pre>
+   </div>
+</div>
 
 <br />
 
-<p>Focus distance</p>
-<input type="range" [ngModel]="focusDistance" min="1" max="5" (ngModelChange)="onFocusDistanceSliderChanged($event)" />
-<pre>Has Focus Distance: {{ hasFocusDistance | json }}</pre>
-<pre>Focus Distance: {{ focusDistance | json }}</pre>
+<div>
+   <p>Focus distance</p>
+   <pre><b>Has Focus Distance: </b>{{ hasFocusDistance | json }}</pre>
+   <div *ngIf="hasFocusDistance">
+      <input #focusSlider aria-label="Focus" type="range" 
+         [ngModel]="focusDistance" 
+         [min]="hasFocusDistance.min || 0" 
+         [max]="Math.max(hasFocusDistance.max, 1) || 1" 
+         [step]="hasFocusDistance.step || 0.1" 
+         (ngModelChange)="onFocusDistanceSliderChanged($event)" />
+      
+      <pre><b>Focus: </b>{{ focusDistance | json }}</pre>
+      <pre><b>Min:   </b>{{ focusSlider.min }}</pre>
+      <pre><b>Max:   </b>{{ focusSlider.max }}</pre>
+      <pre><b>Step:  </b>{{ focusSlider.step }}</pre>
+   </div>
+</div>

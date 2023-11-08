@@ -56,7 +56,7 @@ video {
    animation: scanning-laser 1.5s infinite;
 }
 
-.laser-inner {
+/* .laser-inner {
    position: absolute;
    width: 35%;
    left: 0%;
@@ -64,7 +64,7 @@ video {
    background-color: #ff2c06;
    box-shadow: 0 0 4px #ff2c06;
    animation: scanning-laser-inner 0.23s infinite;
-}
+} */
 
 @keyframes scanning-laser {
    0% {

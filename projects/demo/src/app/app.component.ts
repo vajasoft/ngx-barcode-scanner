@@ -10,14 +10,23 @@ export class AppComponent {
   zoom: number = 1;
   hasFocusDistance: any;
   focusDistance: number = 0;
+  scanResult: any;
+
+  get Math() {
+    return Math;
+  }
 
   onResult(event: any) {
     console.log(JSON.stringify(event));
+    this.scanResult = event;
   }
 
   onHasZoomChanged(event: any) {
     console.log(JSON.stringify(event));
     this.hasZoom = event;
+    if(this.hasZoom) {
+      this.hasZoom.min;
+    }
   }
 
   onHasFocusDistanceChanged(event: any) {
