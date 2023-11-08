@@ -1,11 +1,11 @@
-<ngx-vajasoft-barcode 
+<ngx-barcode-scanner 
    (result)="onResult($event)" 
    [autofocus]="true"
    [zoom]="zoom"
    [focusDistance]="focusDistance"
    (hasZoomChanged)="onHasZoomChanged($event)"
    (hasFocusDistanceChanged)="onHasFocusDistanceChanged($event)">
-</ngx-vajasoft-barcode>
+</ngx-barcode-scanner>
 
 <div *ngIf="scanResult">
    <p>Result</p>

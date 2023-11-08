@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
-import { NgxVajasoftBarcodeComponent } from './ngx-vajasoft-barcode.component';
+import { NgxBarcodeScannerComponent } from './ngx-barcode-scanner.component';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
-    NgxVajasoftBarcodeComponent
+    NgxBarcodeScannerComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    NgxVajasoftBarcodeComponent
+    NgxBarcodeScannerComponent
   ]
 })
 export class NgxVajasoftBarcodeModule { }

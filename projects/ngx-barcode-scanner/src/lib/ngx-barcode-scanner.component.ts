@@ -2,11 +2,11 @@ import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnDestroy, O
 import { BrowserMultiFormatReader, DecodeContinuouslyCallback, Exception } from '@zxing/library'
 
 @Component({
-  selector: 'ngx-vajasoft-barcode',
-  templateUrl: './ngx-vajasoft-barcode.component.html',
-  styleUrls: ['./ngx-vajasoft-barcode.component.scss']
+  selector: 'ngx-barcode-scanner',
+  templateUrl: './ngx-barcode-scanner.component.html',
+  styleUrls: ['./ngx-barcode-scanner.component.scss']
 })
-export class NgxVajasoftBarcodeComponent implements OnInit, AfterViewInit, OnDestroy {
+export class NgxBarcodeScannerComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('scanner') scanner!: ElementRef;
 
   @Output() hasTorchChanged: EventEmitter<boolean> = new EventEmitter();

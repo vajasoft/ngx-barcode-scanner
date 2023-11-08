@@ -10,6 +10,8 @@ MIT
 @angular/platform-browser
 MIT
 
+@vajasoft/ngx-barcode-scanner
+
 @zxing/library
 MIT
                                  Apache License
@@ -258,8 +260,6 @@ You acknowledge that this software is not designed or intended for
 use in the design, construction, operation or maintenance of any
 nuclear facility.
 
-
-ngx-vajasoft-barcode
 
 rxjs
 Apache-2.0

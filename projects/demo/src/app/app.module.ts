@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
-import { NgxVajasoftBarcodeModule } from 'ngx-vajasoft-barcode';
+import { NgxVajasoftBarcodeModule } from 'ngx-barcode-scanner';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({

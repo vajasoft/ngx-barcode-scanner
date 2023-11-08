@@ -24,8 +24,8 @@
       "dom"
     ],
     "paths": {
-      "ngx-vajasoft-barcode": [
-        "dist/ngx-vajasoft-barcode"
+      "ngx-barcode-scanner": [
+        "dist/ngx-barcode-scanner"
       ]
     }
   },
