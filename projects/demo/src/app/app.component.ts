@@ -25,7 +25,6 @@ export class AppComponent {
 
   onHasTorchChanged(event: any) {
     console.log(JSON.stringify(event));
-    alert(JSON.stringify(event));
     this.hasTorch = event;
   }
 

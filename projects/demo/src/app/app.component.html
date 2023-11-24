@@ -9,8 +9,6 @@
    (hasFocusDistanceChanged)="onHasFocusDistanceChanged($event)">
 </ngx-barcode-scanner>
 
-<pre>{{ torch }}</pre>
-
 <div *ngIf="scanResult">
    <p>Result</p>
    <pre>{{ scanResult | json }}</pre>
