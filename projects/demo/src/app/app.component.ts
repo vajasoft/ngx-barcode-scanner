@@ -11,14 +11,22 @@ export class AppComponent {
   hasFocusDistance: any;
   focusDistance: number = 0;
   scanResult: any;
+  hasTorch: boolean = false;
+  torch: boolean = false;
 
   get Math() {
     return Math;
   }
 
   onResult(event: any) {
-    console.log(JSON.stringify(event));
+    console.log(`Focus distance changed: ${JSON.stringify(event)}`);
     this.scanResult = event;
+  }
+
+  onHasTorchChanged(event: any) {
+    console.log(JSON.stringify(event));
+    alert(JSON.stringify(event));
+    this.hasTorch = event;
   }
 
   onHasZoomChanged(event: any) {
@@ -36,16 +44,6 @@ export class AppComponent {
 
   onDecode(result: any) {
     console.log(result)
-  }
-
-  onZoomSliderChanged(event: any) {
-    this.zoom = parseInt(event) ?? 1;
-    console.log(`Zoom changed: ${JSON.stringify(this.zoom)}`);
-  }
-
-  onFocusDistanceSliderChanged(event: any) {
-    this.focusDistance = parseInt(event) ?? 0;
-    console.log(`Focus Distance changed: ${JSON.stringify(this.focusDistance)}`);
   }
 
 }

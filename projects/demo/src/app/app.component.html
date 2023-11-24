@@ -3,9 +3,13 @@
    [autofocus]="true"
    [zoom]="zoom"
    [focusDistance]="focusDistance"
+   [torch]="torch"
+   (hasTorchChanged)="onHasTorchChanged($event)"
    (hasZoomChanged)="onHasZoomChanged($event)"
    (hasFocusDistanceChanged)="onHasFocusDistanceChanged($event)">
 </ngx-barcode-scanner>
+
+<pre>{{ torch }}</pre>
 
 <div *ngIf="scanResult">
    <p>Result</p>
@@ -13,15 +17,26 @@
 </div>
 
 <div>
+   <p>Torch</p>
+   <pre><b>Has Torch: </b>{{ hasTorch | json }}</pre>
+   <div *ngIf="hasTorch">
+      <label class="toggle">
+         <input type="checkbox" [(ngModel)]="torch">
+         <span class="slider"></span>
+         <span class="labels" data-on="ON" data-off="OFF"></span>
+      </label>
+   </div>
+</div>
+
+<div>
    <p>Zoom</p>
    <pre><b>Has Zoom: </b>{{ hasZoom | json }}</pre>
    <div *ngIf="hasZoom">
       <input #zoomSlider aria-label="Zoom" type="range" 
-         [ngModel]="zoom" 
+         [(ngModel)]="zoom" 
          [min]="hasZoom.min || 1" 
          [max]="hasZoom.max || 2" 
-         [step]="hasZoom.step || 0.1" 
-         (ngModelChange)="onZoomSliderChanged($event)" />
+         [step]="hasZoom.step || 0.1" />
       <pre><b>Value: </b>{{ zoom | json }}</pre>
       <pre><b>Min:  </b>{{ zoomSlider.min }}</pre>
       <pre><b>Max:  </b>{{ zoomSlider.max }}</pre>
@@ -29,18 +44,16 @@
    </div>
 </div>
 
-<br />
-
 <div>
    <p>Focus distance</p>
    <pre><b>Has Focus Distance: </b>{{ hasFocusDistance | json }}</pre>
    <div *ngIf="hasFocusDistance">
       <input #focusSlider aria-label="Focus" type="range" 
-         [ngModel]="focusDistance" 
+         [(ngModel)]="focusDistance" 
          [min]="hasFocusDistance.min || 0" 
          [max]="Math.max(hasFocusDistance.max, 1) || 1" 
          [step]="hasFocusDistance.step || 0.1" 
-         (ngModelChange)="onFocusDistanceSliderChanged($event)" />
+          />
       
       <pre><b>Focus: </b>{{ focusDistance | json }}</pre>
       <pre><b>Min:   </b>{{ focusSlider.min }}</pre>
