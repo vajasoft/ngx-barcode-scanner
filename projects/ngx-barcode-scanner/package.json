@@ -1,6 +1,12 @@
 {
   "name": "@vajasoft/ngx-barcode-scanner",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "description": "Angular Barcode Scanner",
+  "author": "Falk Heine",
+  "keywords": [
+    "angular",
+    "barcode"
+  ],
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0"
