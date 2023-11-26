@@ -1,6 +1,6 @@
 {
   "name": "@vajasoft/ngx-barcode-scanner",
-  "version": "16.0.3",
+  "version": "17.0.0",
   "description": "Angular Barcode Scanner",
   "author": "Falk Heine",
   "keywords": [
@@ -8,8 +8,8 @@
     "barcode"
   ],
   "peerDependencies": {
-    "@angular/common": "^16.2.0",
-    "@angular/core": "^16.2.0"
+    "@angular/common": "^17.0.4",
+    "@angular/core": "^17.0.4"
   },
   "dependencies": {
     "tslib": "^2.3.0"
