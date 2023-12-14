@@ -13,6 +13,7 @@ ng serve --host 0.0.0.0
 
 ## NPM
 ```sh
+cd dist/ngx-barcode-scanner
 npm login
 npm publish
 ```

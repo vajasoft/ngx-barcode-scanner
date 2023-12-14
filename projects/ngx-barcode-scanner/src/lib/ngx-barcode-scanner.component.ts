@@ -31,6 +31,7 @@ export class NgxBarcodeScannerComponent implements OnInit, AfterViewInit, OnDest
   private _landscape: boolean = false;
   private _deviceIndex: number = 0;
   private _noFrontCameras: boolean = false;
+  private _height: string = '200px';
 
   @Input() 
   public get torch() {
@@ -115,6 +116,14 @@ export class NgxBarcodeScannerComponent implements OnInit, AfterViewInit, OnDest
   }
   public set noFrontCameras(value: boolean) {
     this._noFrontCameras = value;
+  }
+
+  @Input() 
+  public get height() {
+    return this._height;
+  }
+  public set height(value: string) {
+    this._height = value;
   }
 
   hasTorch() {
